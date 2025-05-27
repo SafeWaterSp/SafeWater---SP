@@ -1,88 +1,121 @@
-
+/* Reset padrão */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Paleta de cores */
+:root {
+  --azul-marinho: #0A2647;
+  --azul-oceano: #144272;
+  --azul-celeste: #2C74B3;
+  --azul-claro: #8DBFE5;
+  --branco-gelo: #F8F9FA;
+}
 
+/* Body */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: white;
-  color: black;
+  background-color: var(--branco-gelo);
+  color: var(--azul-marinho);
 }
 
+/* Header */
 header {
-  background-color: black;
-  padding: 20px;
+  background-color: var(--azul-marinho);
+  padding: 20px 0;
+  height: 100px;
 }
 
-header nav {
+/* Navbar */
+.navbar {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 }
 
+/* Logo */
 .logo {
   font-family: 'Ubuntu', sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
   font-style: italic;
-  color: white;
+  color: var(--branco-gelo);
+  display: flex;
+  align-items: center;
+  transform: translateY(5px); /* Desce levemente */
+  margin-left:40px; /* Move um pouco para a esquerda */
 }
 
+/* Menu */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  margin-right: 20px;
+  padding: 8px 16px;
+  border: 2px solid var(--azul-marinho);
+  border-radius: 10px;
+  background-color: var(--azul-oceano);
+  position: relative;
 }
 
 nav ul li a {
-  color: white;
+  color: var(--branco-gelo);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
+  padding: 10px 15px;
+  border-radius: 8px;
 }
 
 nav ul li a:hover {
-  color: gray;
+  background-color: var(--azul-celeste);
+  color: var(--azul-marinho);
 }
 
-
+/* Seções */
 section {
   padding: 60px 20px;
-  background-color: white;
+  background-color: var(--branco-gelo);
 }
 
 section h2 {
-  color: black;
+  color: var(--azul-oceano);
   margin-bottom: 20px;
 }
 
-section p {
-  color: black;
+section p,
+section ul {
+  color: var(--azul-marinho);
   line-height: 1.6;
 }
 
-
+/* Botões */
 button {
-  background-color: black;
+  background-color: var(--azul-celeste);
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
+  border-radius: 6px;
   transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: gray;
+  background-color: var(--azul-oceano);
 }
 
-
+/* Footer */
 footer {
-  background-color: black;
-  color: white;
+  background-color: var(--azul-marinho);
+  color: var(--branco-gelo);
   text-align: center;
   padding: 20px;
 }
