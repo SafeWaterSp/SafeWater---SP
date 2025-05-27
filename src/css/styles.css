@@ -8,10 +8,10 @@
 /* Paleta de cores */
 :root {
   --azul-marinho: #0A2647;
-  --azul-oceano: #144272;
-  --azul-celeste: #2C74B3;
+  --azul-oceano: #0c3868;
+  --azul-celeste: #0a60ac;
   --azul-claro: #8DBFE5;
-  --branco-gelo: #F8F9FA;
+  --branco-gelo: #cbdef1;
 }
 
 /* Body */
@@ -26,7 +26,10 @@ header {
   background-color: var(--azul-marinho);
   padding: 20px 0;
   height: 100px;
+  border-radius: 0 0 15px 15px;
+  
 }
+
 
 /* Navbar */
 .navbar {
