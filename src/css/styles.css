@@ -16,6 +16,7 @@
 
 /* Body */
 body {
+    overflow-x: hidden; /* Remove rolagem horizonta */
     font-family: 'Poppins', sans-serif;
     background-color: var(--branco-gelo);
     color: var(--azul-marinho);
