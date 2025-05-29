@@ -6,3 +6,8 @@ window.addEventListener("scroll", function () {
     header.style.backgroundColor = "rgba(0, 0, 128, 0)"; // Transparente
   }
 });
+
+document.querySelector(".menu-toggle").addEventListener("click", function () {
+    document.querySelector(".menu").classList.toggle("active");
+});
+
