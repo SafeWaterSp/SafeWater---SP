@@ -16,7 +16,8 @@
 
 /* Body */
 body {
-    overflow-x: hidden; /* Remove rolagem horizontal */
+    overflow-x: hidden;
+    /* Remove rolagem horizontal */
     font-family: 'Poppins', sans-serif;
     background-color: var(--branco-gelo);
     color: var(--azul-marinho);
@@ -31,8 +32,9 @@ header {
     width: 100%;
     left: 0;
     top: 0;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
     z-index: 1;
+    font-size: 15px;
 }
 
 /* Estilização do botão hamburguer */
@@ -41,21 +43,24 @@ header {
     border: none;
     font-size: 30px;
     cursor: pointer;
-    display: none; /* Escondido por padrão */
+    display: none;
+    /* Escondido por padrão */
     color: #fff;
 }
 
 /* Menu */
 .menu {
     display: flex;
-    flex-direction: column; /* Organiza os itens na vertical */
+    flex-direction: column;
+    /* Organiza os itens na vertical */
     gap: 10px;
 }
 
 /* Configuração para telas menores */
 @media screen and (max-width: 1020px) {
     .menu-toggle {
-        display: block; /* Mostra o botão */
+        display: block;
+        /* Mostra o botão */
         position: absolute;
         right: 20px;
         top: 30px;
@@ -141,9 +146,9 @@ nav ul li a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
-    padding: 10px 15px;
+    padding: 10px 10px;
     border-radius: 8px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 nav ul li a:hover {
@@ -157,6 +162,54 @@ section {
 }
 
 #problema {
+    background-color: #072f65;
+    padding: 70px 10%;
+    color: #fff;
+    width: 100%;
+}
+
+#tecnologia {
+    background-color: #072f65;
+    padding: 70px 10%;
+    color: #fff;
+    width: 100%;
+}
+
+#techlist ul {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    list-style: none;
+    padding: 10;
+}
+
+.tech-icon {
+    height: 100px;
+}
+
+
+#objetivo {
+    background-color: #072f65;
+    padding: 70px 10%;
+    color: #fff;
+    width: 100%;
+}
+
+#publico-alvo {
+    background-color: #072f65;
+    padding: 70px 10%;
+    color: #fff;
+    width: 100%;
+}
+
+#beneficio {
+    background-color: #072f65;
+    padding: 70px 10%;
+    color: #fff;
+    width: 100%;
+}
+
+#impacto {
     background-color: #072f65;
     padding: 70px 10%;
     color: #fff;
@@ -212,6 +265,7 @@ footer {
     object-fit: cover;
     transition: 0.5s;
 }
+
 .solucao img:hover {
     filter: brightness(70%);
 }

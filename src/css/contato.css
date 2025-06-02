@@ -1,0 +1,135 @@
+/* Reset padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Paleta de cores */
+:root {
+  --azul-marinho: #072f65;
+  --azul-oceano: #0c3868;
+  --azul-celeste: #0a60ac;
+  --azul-claro: #8dbfe5;
+  --branco-gelo: #cbdef1;
+}
+
+/* Body */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #7ea7ca;
+}
+
+/* Header */
+header {
+  width: 100%;
+  position: fixed;
+  background-color: rgba(7, 47, 101, 1);
+  top: 0;
+  left: 0;
+  padding: 20px 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  height: 110px;
+}
+
+header .logo img {
+  height: 150px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+header nav ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 18px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header nav ul li a:hover {
+  background-color: white;
+  color: var(--azul-marinho);
+}
+
+/* Formulário de contato */
+main {
+  padding: 200px 5% 50px 5%; /* Aumenta o padding-top para compensar o header fixo */
+}
+
+
+.contato {
+  background-color: var(--branco-gelo);
+  padding: 50px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.contato h2 {
+  color: var(--azul-marinho);
+  margin-bottom: 10px;
+}
+
+.contato p {
+  color: var(--azul-oceano);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--azul-marinho);
+  font-weight: 600;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 2px solid var(--azul-claro);
+  background-color: #f4f9fd;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--azul-celeste);
+  outline: none;
+}
+
+button {
+  background-color: var(--azul-celeste);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--azul-oceano);
+}
+
+/* Footer */
+footer {
+  background-color: var(--azul-marinho);
+  color: var(--branco-gelo);
+  text-align: center;
+  padding: 20px;
+}
