@@ -103,7 +103,7 @@ header {
 /* SLIDER */
 #slider-container {
     width: 100%;
-    height: 400px;
+    height: 500px;
     overflow: hidden;
     position: relative;
 }
@@ -154,6 +154,49 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #fff;
     color: var(--azul-marinho);
+}
+
+.sections {
+    width: 100%;
+    background-color: var(--azul-celeste);
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+}
+
+.sections ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;         
+    gap: 30px; 
+                     /* Espaço entre os itens */
+}
+
+.sections li {
+    margin: 0; 
+    list-style: none;   
+    display: flex;
+    justify-content: center;
+     
+                  /* Remove margens padrão */
+}
+
+.sections a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sections a:hover {
+    background-color: #00aaff;
+    color: #000;
+    transform: translateY(-3px);
 }
 
 /* Seções */
