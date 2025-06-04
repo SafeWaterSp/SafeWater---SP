@@ -544,7 +544,7 @@
   font-size: 3em;
   color: #fff;
   margin-bottom: 60px;
-  text-shadow: 0 0 8px #4da6ff, 0 0 15px #4da6ff;
+ 
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -581,9 +581,9 @@
 /* Ícones Font Awesome */
 .cards-publico .card i {
   font-size: 60px;
-  color: #4da6ff;
+  color: #ffffff;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px rgba(77, 166, 255, 0.8);
+  
 }
 
 /* Título dentro do card */
@@ -591,7 +591,7 @@
   margin-bottom: 15px;
   color: #aad8ff;
   font-size: 1.5em;
-  text-shadow: 0 0 5px #4da6ff;
+ 
 }
 
 /* Texto dos cards */
@@ -601,12 +601,91 @@
   line-height: 1.6;
 }
 
-  #beneficio {
-    background-color: #072f65;
-    padding: 70px 10%;
-    color: #fff;
-    width: 100%;
-  }
+ /* Seção Benefício */
+#beneficio {
+  background: linear-gradient(135deg, #072f65, #0a417f);
+  padding: 80px 10%;
+  color: #fff;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título */
+#beneficio h2 {
+  text-align: center;
+  font-size: 3em;
+  color: #ffffff;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Texto descritivo */
+.descricao-beneficio {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.descricao-beneficio p {
+  font-size: 1.1em;
+  color: #e0e7ff;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Container dos cards */
+.cards-beneficios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Cada card */
+.cards-beneficios .card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  width: 280px;
+  padding: 25px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
+              0 0 15px rgba(77, 166, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+/* Efeito hover */
+.cards-beneficios .card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
+              0 0 25px rgba(77, 166, 255, 0.8);
+}
+
+/* Ícones Font Awesome */
+.cards-beneficios .card i {
+  font-size: 60px;
+  color: #ffffff;
+  margin-bottom: 20px;
+
+}
+
+/* Título dos cards */
+.cards-beneficios .card h3 {
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 1.5em;
+  
+}
+
+/* Texto dos cards */
+.cards-beneficios .card p {
+  font-size: 1em;
+  color: #e0e7ff;
+  line-height: 1.6;
+}
+
 
   #impacto {
     background-color: #072f65;
@@ -690,3 +769,91 @@
   .info-enchente h2{
       font-size: 30px;
   }
+  /* Seção Impacto */
+#impacto {
+  background: linear-gradient(135deg, #072f65, #0a417f);
+  padding: 80px 10%;
+  color: #fff;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 2px solid rgba(77, 166, 255, 0.5);
+  border-bottom: 2px solid rgba(77, 166, 255, 0.5);
+}
+
+/* Título */
+#impacto h2 {
+  text-align: center;
+  font-size: 3em;
+  color: #ffffff;
+  margin-bottom: 50px;
+ 
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Texto */
+.texto-impacto {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
+              0 0 15px rgba(77, 166, 255, 0.4);
+  backdrop-filter: blur(12px);
+}
+
+/* Parágrafos */
+.texto-impacto p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #e0e7ff;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Negrito */
+.texto-impacto strong {
+  color: #4da6ff;
+}
+
+/* Efeito de hover sutil (opcional) */
+.texto-impacto:hover {
+  transform: scale(1.02);
+  transition: 0.4s ease;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
+              0 0 25px rgba(77, 166, 255, 0.8);
+}
+/* Estilo do Rodapé */
+footer {
+  background-color: #072f65;
+  padding: 20px 10%;
+  color: #fff;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Link do GitHub */
+.github-link {
+  color: #fafafa;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s ease;
+}
+
+
+
+/* Efeito hover */
+.github-link:hover {
+  color: #4da6ff;
+  transform: scale(1.05);
+}
+
