@@ -17,7 +17,7 @@
 /* Body */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #7ea7ca;
+  background-color:var(--azul-oceano);
 }
 
 /* Header */
