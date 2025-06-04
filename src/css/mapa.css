@@ -1,4 +1,3 @@
- /* Reset padrão */
 /* Reset padrão */
 * {
   margin: 0;
@@ -21,66 +20,92 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--azul-marinho);
   color: var(--branco-gelo);
-}
-
-/* Header */
-header {
-  background-color: rgba(7, 47, 101, 0.9); /* azul-marinho semi-transparente */
-  padding: 20px 5%;
-  height: 100px;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  transition: background-color 0.3s ease-in-out;
-  z-index: 1000;
+  /* Garante que o corpo ocupe a altura total da viewport e use flexbox */
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
-/* Logo */
+/* Header - Padronizado com index.html (z-index adaptado para o mapa) */
+header {
+    background-color: rgba(242, 241, 241, 0);
+    padding: 20px 5%;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1;
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    
+    
+  }
+
+/* Navbar - Adicionado para padronizar com index.html */
+.navbar {
+  margin: 0;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%; /* Garante que a navbar ocupe a largura total do header */
+}
+
+/* Logo (para mapa.html que usa h1 no logo) */
 header .logo h1 {
   color: var(--branco-gelo);
   font-size: 24px;
 }
 
-/* Estilização do botão hamburguer */
+/* Logo (para index.html, quiz.html, contato.html que usam img no logo) */
+#logo_img {
+  height: 120px;
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.8));
+}
+
+/* Estilização do botão hamburguer - Padronizado com index.html */
 .menu-toggle {
   background: none;
   border: none;
   font-size: 30px;
   cursor: pointer;
-  display: none;
-  color: var(--branco-gelo);
+  display: none; /* Escondido por padrão em telas maiores */
+  color: #fff;
+  z-index: 1001; /* Z-index ainda mais alto para o botão */
 }
 
-/* Menu */
+/* Menu principal (desktop) - Padronizado com index.html */
 .menu {
-  display: flex;
-  gap: 30px;
+  font-weight: 700;
 }
 
-.menu ul {
+.menu ul { /* Seletor direto para ul dentro do menu */
   list-style: none;
   display: flex;
   gap: 30px;
+  padding: 8px 16px;
+  margin: 0;
 }
 
 .menu ul li a {
-  color: var(--branco-gelo);
+  color: #fff;
   text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 10px 10px;
+  border-radius: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .menu ul li a:hover {
-  background-color: var(--azul-celeste);
-  color: white;
+  background-color: #fff;
+  color: var(--azul-marinho);
 }
 
-/* Configuração para telas menores */
+/* Configuração para telas menores (menu hambúrguer) - Padronizado com index.html */
 @media screen and (max-width: 1020px) {
   .menu-toggle {
     display: block;
@@ -90,27 +115,37 @@ header .logo h1 {
   }
 
   .menu {
+    background-color: black; /* Fundo preto conforme solicitado anteriormente para mapa.html */
     display: none;
     flex-direction: column;
-    background-color: var(--azul-oceano);
     position: absolute;
-    right: 20px;
+    right: 0;
     top: 100px;
     width: 200px;
-    padding: 15px;
+    padding: 10px;
     border-radius: 8px;
-    z-index: 1001;
+    z-index: 10;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
   }
 
   .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
     flex-direction: column;
     gap: 15px;
   }
 
   .menu ul li a {
-    color: white;
+    color: #fff;
     padding: 10px;
     display: block;
+  }
+
+  .menu ul li a:hover {
+    background-color: #fff;
+    color: var(--azul-marinho);
   }
 
   .menu.active {
@@ -121,31 +156,12 @@ header .logo h1 {
 /* Mapa ocupa toda a tela */
 #map {
   width: 100%;
-  height: 100vh;
-  margin-top: 100px; /* Para não ficar escondido atrás do header */
+  height: calc(100vh - 100px);
+  margin-top: 100px;
+  flex-grow: 1;
 }
 
 /* Estilo da legenda do mapa */
-.leaflet-control.legend {
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
-  line-height: 18px;
-  color: #333;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.leaflet-control.legend i {
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin-right: 8px;
-  opacity: 0.9;
-  border-radius: 50%;
-}
-
-
-/* Estilo da legenda */
 .leaflet-control.legend {
   background: white;
   padding: 10px;
