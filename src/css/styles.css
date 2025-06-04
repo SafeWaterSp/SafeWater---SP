@@ -1,30 +1,29 @@
-  /* Reset padrão */
-  * {
+/* Reset padrão */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
-  /* Paleta de cores */
-  :root {
+/* Paleta de cores */
+:root {
     --azul-marinho: #072f65;
     --azul-oceano: #0c3868;
     --azul-celeste: #0a60ac;
     --azul-claro: #8dbfe5;
     --branco-gelo: #cbdef1;
-  }
+}
 
-  /* Body */
-  body {
-    overflow-x: hidden;
-    /* Remove rolagem horizontal */
+/* Base Body Styles */
+body {
+    overflow-x: hidden; /* Remove rolagem horizontal */
     font-family: "Poppins", sans-serif;
     background-color: var(--azul-marinho);
     color: var(--azul-marinho);
-  }
+}
 
-  /* Header */
-  header {
+/* Header Section */
+header {
     background-color: rgba(242, 241, 241, 0);
     padding: 20px 5%;
     height: 100px;
@@ -36,112 +35,33 @@
     z-index: 1;
     font-size: 17px;
     font-family: "Poppins", sans-serif;
-    
-    
-  }
+}
 
-  /* Estilização do botão hamburguer */
-  .menu-toggle {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    display: none;
-    /* Escondido por padrão */
-    color: #fff;
-  }
-
-  /* Menu */
-  .menu {
-    font-weight: 700px;
-  }
-
-  /* Configuração para telas menores */
-  @media screen and (max-width: 1020px) {
-    .menu-toggle {
-      display: block;
-      /* Mostra o botão */
-      position: absolute;
-      right: 20px;
-      top: 30px;
-    }
-
-    .menu {
-      background-color: var(--azul-marinho);
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      right: 0;
-      top: 100px;
-      width: 200px;
-      padding: 10px;
-      border-radius: 8px;
-      z-index: 10;
-    }
-
-    .menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .menu ul li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px;
-      display: block;
-    }
-
-    .menu.active {
-      display: flex;
-    }
-  }
-
-  /* SLIDER */
-  #slider-container {
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .banner {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: brightness(80%);
-    position: relative;
-  }
-
-  /* Navbar */
-  .navbar {
+/* Navbar Layout */
+.navbar {
     margin: 0;
     padding: 0 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
-  }
+}
 
-  /* Logo */
-  #logo_img {
+/* Logo Styling */
+#logo_img {
     height: 120px;
     filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.8));
-  }
+}
 
-  /* Menu */
-  nav ul {
+/* Main Navigation Menu */
+nav ul {
     list-style: none;
     display: flex;
     gap: 30px;
     padding: 8px 16px;
-  }
+}
 
-  nav ul li a {
+nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
@@ -149,36 +69,107 @@
     padding: 10px 10px;
     border-radius: 8px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  }
+}
 
-  nav ul li a:hover {
+nav ul li a:hover {
     background-color: #fff;
     color: var(--azul-marinho);
-  }
+}
 
-  .sections {
+/* Hamburger Menu Button */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Escondido por padrão em telas maiores */
+    color: #fff;
+}
+
+/* Mobile Menu Styling */
+@media screen and (max-width: 1020px) {
+    .menu-toggle {
+        display: block; /* Mostra o botão em telas menores */
+        position: absolute;
+        right: 20px;
+        top: 30px;
+    }
+
+    .menu {
+        background-color: var(--azul-marinho);
+        display: none; /* Esconde o menu por padrão no mobile */
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 100px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 10;
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
+
+    .menu.active {
+        display: flex; /* Mostra o menu quando a classe 'active' é adicionada via JS */
+    }
+}
+
+/* Slider Section */
+#slider-container {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(80%);
+    position: relative;
+}
+
+/* Sections Navigation (Internal Links) */
+.sections {
     width: 100%;
     background-color: var(--azul-celeste);
     padding: 10px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
+}
 
-  .sections ul {
+.sections ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     gap: 30px;
-  }
+}
 
-  .sections li {
+.sections li {
     display: flex;
     justify-content: center;
-  }
+}
 
-  .sections a {
+.sections a {
     text-decoration: none;
     color: white;
     font-family: "Poppins", sans-serif;
@@ -186,83 +177,150 @@
     padding: 8px 12px;
     border-radius: 8px;
     transition: all 0.3s ease;
-  }
+}
 
-  .sections a:hover {
+.sections a:hover {
     background-color: #00aaff;
     color: #000;
     transform: translateY(-3px);
-  }
+}
 
-  /* Responsividade para telas menores */
-  @media screen and (max-width: 768px) {
+/* Responsive Sections Navigation */
+@media screen and (max-width: 768px) {
     .sections {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     .sections ul {
-      flex-direction: column;
-      gap: 20px;
+        flex-direction: column;
+        gap: 20px;
     }
-  }
+}
 
-  /* Seções */
-  section {
-    background-color: var(--branco-gelo);
-  }
-  .slideshow-container {
-    max-width: 1200px;
-    position: relative;
-    margin: 150px auto 30px auto;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+/* Main Content Area */
+.conteudo-principal {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Alinha os itens para terem a mesma altura */
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    width: 90%; /* Ajuste a largura para o conteúdo principal */
+    margin: 40px auto; /* Centraliza o conteúdo principal */
+    padding: 15px;
+}
 
-  }
-  @media screen and (max-width: 1024px) {
+/* Responsive Main Content */
+@media screen and (max-width: 1024px) {
     .conteudo-principal {
         width: 95%;
         margin: 40px auto;
         padding: 15px;
         gap: 20px;
     }
-  }
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .conteudo-principal {
         width: 95%;
         margin: 30px auto;
         padding: 10px;
         gap: 15px;
+        flex-direction: column; /* Coloca os itens um abaixo do outro */
+        align-items: center; /* Centraliza os itens quando empilhados */
     }
-  }
+}
 
-  .mySlides {
+/* Enchentes Section - Information and Slider */
+#enchentes {
+    background-color: #072f65;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    color: var(--branco-gelo);
+    width: 100%;
+    text-align: center;
+    /* Remover display flex aqui, pois o .conteudo-principal já controla isso */
+    /* flex-direction: row; */ /* Este é o problema, ele já é um item flex no .conteudo-principal */
+}
+
+.info-enchente {
+    background-color: rgba(7, 47, 101, 0.9);
+    color: white;
+    padding: 73px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    /* height: 600px; */ /* Removido para permitir que se ajuste ao conteúdo do slideshow */
+    width: 45%; /* Definido como porcentagem para flexibilidade */
+    font-family: "Poppins", sans-serif;
+    margin-right: 20px;
+    display: flex; /* Para alinhar o conteúdo interno verticalmente */
+    flex-direction: column;
+    justify-content: center; /* Centraliza o texto verticalmente */
+    align-items: center; /* Centraliza o texto horizontalmente */
+    text-align: center; /* Garante que o texto esteja centralizado */
+    padding: 20px 40px; /* Ajusta o padding para melhor visualização */
+}
+
+.info-enchente h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.info-enchente p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    max-width: 50%; /* Definido como porcentagem para flexibilidade */
+    position: relative;
+    margin: 0; /* Removido margin auto para alinhar com o flexbox */
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+    .info-enchente,
+    .slideshow-container {
+        width: 100%; /* Ocupa a largura total em telas menores */
+    }
+
+    .slideshow-container {
+        margin-top: 20px; /* Adiciona espaçamento entre eles quando empilhados */
+    }
+}
+
+/* Slides within the Slideshow */
+.mySlides {
     display: none;
     width: 100%;
-  }
+}
 
-  .mySlides img {
+.mySlides img {
     width: 100%;
-    height: 600px;
+    height: 600px; /* Mantém a altura da imagem para alinhar com o info-enchente */
     object-fit: cover;
     display: block;
     border-radius: 15px;
     transition: opacity 1s ease-in-out;
-  }
+}
 
-  /* Efeito de transição suave */
-  .fade {
+/* Fade Animation for Slides */
+.fade {
     animation-name: fade;
     animation-duration: 1.5s;
-  }
+}
 
-  @keyframes fade {
+@keyframes fade {
     from {opacity: .4;}
     to {opacity: 1;}
-  }
-  .prev, .next {
+}
+
+/* Previous/Next Buttons for Slideshow */
+.prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -276,30 +334,29 @@
     user-select: none;
     background-color: rgba(0,0,0,0.5);
     transition: background-color 0.3s;
-  }
+}
 
-  .next {
+.next {
     right: 0;
     border-radius: 3px 0 0 3px;
-  }
+}
 
-  .prev {
+.prev {
     left: 0;
-  }
+}
 
-  .prev:hover, .next:hover {
+.prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
-  }   
+}
 
-  /* Bolinhas indicadoras */
-  .dots-container {
+/* Dots Indicator for Slideshow */
+.dots-container {
     text-align: center;
     padding: 10px 0;
     background: none;
-    
-  }
+}
 
-  .dot {
+.dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -308,81 +365,86 @@
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-  }
+}
 
-
-
-  #problema {
+/* Problem Section */
+#problema {
     background-color: #072f65;
     padding: 70px 5%;
-    color:  var(--branco-gelo);
+    color: var(--branco-gelo);
     width: 100%;
     text-align: center;
-  }
-  
-  #problema h2 {
+}
+
+#problema h2 {
     font-size: 36px;
     margin-bottom: 40px;
-  }
-  
-  .cards-problema {
+}
+
+/* Note: .cards-problema and .card-problema were commented out/not used in your provided HTML.
+   Leaving the styles here in case they are for future use. */
+.cards-problema {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-  }
-  
-  .card-problema {
+}
+
+.card-problema {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 30px;
     border-radius: 15px;
     width: 280px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, background-color 0.3s;
-  }
-  
-  .card-problema:hover {
+}
+
+.card-problema:hover {
     transform: translateY(-10px);
     background-color: rgba(0, 0, 0, 0.6);
-  }
-  
-  .card-problema i {
+}
+
+.card-problema i {
     font-size: 50px;
     color: #8dbfe5;
     margin-bottom: 15px;
-  }
-  
-  .card-problema h3 {
+}
+
+.card-problema h3 {
     font-size: 22px;
     margin-bottom: 10px;
-  }
-  
-  .card-problema p {
+}
+
+.card-problema p {
     font-size: 16px;
     line-height: 1.5;
-  }
-  
- 
-  h2 {
+}
+
+/* General H2 Styling */
+h2 {
     color: #fff;
     font-size: 40px;
     text-align: center;
     width: 100%;
-  }
-  .solucoes-container {
+    margin-bottom: 30px; /* Added some margin for spacing */
+}
+
+/* Solutions Section */
+.solucoes-container {
     display: flex;
     justify-content: center;
     gap: 50px; /* Espaço entre os cards */
     flex-wrap: wrap;
     margin-top: 30px;
+    margin-bottom: 70px; /* Added some margin for spacing */
 }
 
 .solucao {
-    background-color:var(--azul-marinho);
+    background-color: var(--azul-marinho);
     padding: 16px;
     border-radius: 16px;
     text-align: center;
-    width: 500px; /* ← Aumentei de 230px para 300px */
+    width: 500px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
 }
@@ -397,316 +459,334 @@
 }
 
 .solucao-text {
-    font-size: 18px; /* ← Aumentei */
+    font-size: 18px;
     color: rgb(32, 210, 223);
     margin-top: 10px;
     font-weight: bold;
 }
 
 .solucao-desc {
-    font-size: 14px; /* ← Aumentei */
+    font-size: 14px;
     color: #ddd;
     margin-top: 6px;
     font-weight: 400;
     user-select: none;
 }
+
+/* Technologies Section */
 #tecnologia {
-  background-color: #072f65;
-  padding: 70px 10%;
-  color: #fff;
-  width: 100%;
-  text-align: center;
-}
-
-#tecnologia h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-}
-
-#techlist ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 50px;
-  padding: 0;
-}
-
-#techlist li {
-  background-color: #0b3a7a;
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  width: 300px;
-}
-
-#techlist li:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
-}
-
-.tech-icon {
-  width: 140px;
-  height: 140px;
-  object-fit: contain;
-}
-
-#techlist p {
-  margin-top: 15px;
-  font-size: 1.3em;
-  color: #fff;
-}
-
-/* Estilo da seção */
-#objetivo {
-  background: linear-gradient(135deg, #072f65, #0a417f);
-  padding: 80px 10%;
-  color: #fff;
-  width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Título */
-#objetivo h2 {
-  text-align: center;
-  font-size: 3em;
-  color: #ffffff;
-  margin-bottom: 60px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-/* Container dos cards */
-.cards-objetivo {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-/* Cada card */
-.cards-objetivo .card {
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  width: 300px;
-  padding: 25px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-/* Efeito hover */
-.cards-objetivo .card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
-              0 0 25px rgba(77, 166, 255, 0.8);
-}
-
-/* Imagem dos cards */
-.cards-objetivo .card img {
-  width: 70px;
-  height: 70px;
-  margin-bottom: 20px;
-}
-
-/* Título dentro do card */
-.cards-objetivo .card h3 {
-  margin-bottom: 15px;
-  color: #ffffff;
-  font-size: 1.4em;
- 
-}
-
-/* Texto dos cards */
-.cards-objetivo .card p {
-  font-size: 1em;
-  color: #fff;
-  line-height: 1.6; 
-}
-
-  /* Seção Público-Alvo */
-#publico-alvo {
-  background: linear-gradient(135deg, #072f65, #0a417f);
-  padding: 80px 10%;
-  color: #fff;
-  width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Título */
-#publico-alvo h2 {
-  text-align: center;
-  font-size: 3em;
-  color: #fff;
-  margin-bottom: 60px;
- 
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-/* Container dos cards */
-.cards-publico {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-/* Cada card */
-.cards-publico .card {
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  width: 300px;
-  padding: 25px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
-              0 0 15px rgba(77, 166, 255, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-/* Efeito hover */
-.cards-publico .card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
-              0 0 25px rgba(77, 166, 255, 0.8);
-}
-
-/* Ícones Font Awesome */
-.cards-publico .card i {
-  font-size: 60px;
-  color: #ffffff;
-  margin-bottom: 20px;
-  
-}
-
-/* Título dentro do card */
-.cards-publico .card h3 {
-  margin-bottom: 15px;
-  color: #aad8ff;
-  font-size: 1.5em;
- 
-}
-
-/* Texto dos cards */
-.cards-publico .card p {
-  font-size: 1em;
-  color: #e0e7ff;
-  line-height: 1.6;
-}
-
- /* Seção Benefício */
-#beneficio {
-  background: linear-gradient(135deg, #072f65, #0a417f);
-  padding: 80px 10%;
-  color: #fff;
-  width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Título */
-#beneficio h2 {
-  text-align: center;
-  font-size: 3em;
-  color: #ffffff;
-  margin-bottom: 40px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-/* Texto descritivo */
-.descricao-beneficio {
-  max-width: 900px;
-  margin: 0 auto 60px;
-  text-align: center;
-}
-
-.descricao-beneficio p {
-  font-size: 1.1em;
-  color: #e0e7ff;
-  line-height: 1.7;
-  margin-bottom: 15px;
-}
-
-/* Container dos cards */
-.cards-beneficios {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-/* Cada card */
-.cards-beneficios .card {
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  width: 280px;
-  padding: 25px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
-              0 0 15px rgba(77, 166, 255, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-/* Efeito hover */
-.cards-beneficios .card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
-              0 0 25px rgba(77, 166, 255, 0.8);
-}
-
-/* Ícones Font Awesome */
-.cards-beneficios .card i {
-  font-size: 60px;
-  color: #ffffff;
-  margin-bottom: 20px;
-
-}
-
-/* Título dos cards */
-.cards-beneficios .card h3 {
-  margin-bottom: 15px;
-  color: #ffffff;
-  font-size: 1.5em;
-  
-}
-
-/* Texto dos cards */
-.cards-beneficios .card p {
-  font-size: 1em;
-  color: #e0e7ff;
-  line-height: 1.6;
-}
-
-
-  #impacto {
     background-color: #072f65;
     padding: 70px 10%;
     color: #fff;
     width: 100%;
-  }
+    text-align: center;
+}
 
-  section h2 {
+#tecnologia h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+#techlist ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 0;
+}
+
+#techlist li {
+    background-color: #0b3a7a;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 300px;
+}
+
+#techlist li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+}
+
+.tech-icon {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+}
+
+#techlist p {
+    margin-top: 15px;
+    font-size: 1.3em;
     color: #fff;
-    margin-bottom: 20px;
-  }
+}
 
-  section p,
-  section ul {
+/* Objectives Section */
+#objetivo {
+    background: linear-gradient(135deg, #072f65, #0a417f);
+    padding: 80px 10%;
+    color: #fff;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#objetivo h2 {
+    text-align: center;
+    font-size: 3em;
+    color: #ffffff;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.cards-objetivo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.cards-objetivo .card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    width: 300px;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.cards-objetivo .card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
+                0 0 25px rgba(77, 166, 255, 0.8);
+}
+
+.cards-objetivo .card img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.cards-objetivo .card h3 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 1.4em;
+}
+
+.cards-objetivo .card p {
+    font-size: 1em;
     color: #fff;
     line-height: 1.6;
-  }
+}
 
-  /* Botões */
-  button {
+/* Target Audience Section */
+#publico-alvo {
+    background: linear-gradient(135deg, #072f65, #0a417f);
+    padding: 80px 10%;
+    color: #fff;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#publico-alvo h2 {
+    text-align: center;
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.cards-publico {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.cards-publico .card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    width: 300px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
+                0 0 15px rgba(77, 166, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.cards-publico .card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
+                0 0 25px rgba(77, 166, 255, 0.8);
+}
+
+.cards-publico .card i {
+    font-size: 60px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.cards-publico .card h3 {
+    margin-bottom: 15px;
+    color: #aad8ff;
+    font-size: 1.5em;
+}
+
+.cards-publico .card p {
+    font-size: 1em;
+    color: #e0e7ff;
+    line-height: 1.6;
+}
+
+/* Benefits Section */
+#beneficio {
+    background: linear-gradient(135deg, #072f65, #0a417f);
+    padding: 80px 10%;
+    color: #fff;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#beneficio h2 {
+    text-align: center;
+    font-size: 3em;
+    color: #ffffff;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.descricao-beneficio {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.descricao-beneficio p {
+    font-size: 1.1em;
+    color: #e0e7ff;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.cards-beneficios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.cards-beneficios .card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    width: 280px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
+                0 0 15px rgba(77, 166, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.cards-beneficios .card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
+                0 0 25px rgba(77, 166, 255, 0.8);
+}
+
+.cards-beneficios .card i {
+    font-size: 60px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.cards-beneficios .card h3 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 1.5em;
+}
+
+.cards-beneficios .card p {
+    font-size: 1em;
+    color: #e0e7ff;
+    line-height: 1.6;
+}
+
+/* Impact Section */
+#impacto {
+    background: linear-gradient(135deg, #072f65, #0a417f);
+    padding: 80px 10%;
+    color: #fff;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 2px solid rgba(77, 166, 255, 0.5);
+    border-bottom: 2px solid rgba(77, 166, 255, 0.5);
+}
+
+#impacto h2 {
+    text-align: center;
+    font-size: 3em;
+    color: #ffffff;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.texto-impacto {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
+                0 0 15px rgba(77, 166, 255, 0.4);
+    backdrop-filter: blur(12px);
+}
+
+.texto-impacto p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #e0e7ff;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.texto-impacto strong {
+    color: #4da6ff;
+}
+
+.texto-impacto:hover {
+    transform: scale(1.02);
+    transition: 0.4s ease;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
+                0 0 25px rgba(77, 166, 255, 0.8);
+}
+
+/* General Section Text Styling */
+section h2 {
+    color: #fff; /* Reaplicado para evitar sobrescrita por h2 geral */
+    margin-bottom: 20px;
+}
+
+section p,
+section ul {
+    color: #fff; /* Reaplicado para evitar sobrescrita por p geral */
+    line-height: 1.6;
+}
+
+/* Buttons */
+button {
     background-color: var(--azul-celeste);
     color: white;
     border: none;
@@ -715,145 +795,56 @@
     font-family: "Poppins", sans-serif;
     border-radius: 6px;
     transition: background-color 0.3s;
-  }
+}
 
-  button:hover {
+button:hover {
     background-color: var(--azul-oceano);
-  }
+}
 
-  /* Footer */
-  footer {
+/* Footer Section */
+footer {
     background-color: var(--azul-marinho);
     color: var(--branco-gelo);
     text-align: center;
-    padding: 20px;
-  }
+    padding: 20px 10%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 
-  /* Soluções */
-  .solucoes {
+/* GitHub Link in Footer */
+.github-link {
+    color: #fafafa;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.github-link:hover {
+    color: #4da6ff;
+    transform: scale(1.05);
+}
+
+/* Note: .solucoes was not present in your HTML structure, leaving its styles here in case they are for future use. */
+.solucoes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0;
     width: 100%;
-  }
+}
 
-  .solucao img {
+.solucao img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     transition: 0.5s;
-  }
+}
 
-  .solucao img:hover {
+.solucao img:hover {
     filter: brightness(70%);
-  }
-
-  .info-enchente {
-    background-color: rgba(7, 47, 101, 0.9);
-    color: white;
-    padding: 73.5px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    width: 300px;
-    font-family: "Poppins", sans-serif;
-    margin: 150px 50px 50px 10%;
-  }
-
-  .conteudo-principal {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .info-enchente h2{
-      font-size: 30px;
-  }
-  /* Seção Impacto */
-#impacto {
-  background: linear-gradient(135deg, #072f65, #0a417f);
-  padding: 80px 10%;
-  color: #fff;
-  width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-top: 2px solid rgba(77, 166, 255, 0.5);
-  border-bottom: 2px solid rgba(77, 166, 255, 0.5);
 }
-
-/* Título */
-#impacto h2 {
-  text-align: center;
-  font-size: 3em;
-  color: #ffffff;
-  margin-bottom: 50px;
- 
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-/* Texto */
-.texto-impacto {
-  max-width: 1000px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 40px;
-  border-radius: 25px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
-              0 0 15px rgba(77, 166, 255, 0.4);
-  backdrop-filter: blur(12px);
-}
-
-/* Parágrafos */
-.texto-impacto p {
-  font-size: 1.2em;
-  line-height: 1.8;
-  color: #e0e7ff;
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-/* Negrito */
-.texto-impacto strong {
-  color: #4da6ff;
-}
-
-/* Efeito de hover sutil (opcional) */
-.texto-impacto:hover {
-  transform: scale(1.02);
-  transition: 0.4s ease;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
-              0 0 25px rgba(77, 166, 255, 0.8);
-}
-/* Estilo do Rodapé */
-footer {
-  background-color: #072f65;
-  padding: 20px 10%;
-  color: #fff;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Link do GitHub */
-.github-link {
-  color: #fafafa;
-  text-decoration: none;
-  font-size: 1.1em;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: 0.3s ease;
-}
-
-
-
-/* Efeito hover */
-.github-link:hover {
-  color: #4da6ff;
-  transform: scale(1.05);
-}
-
