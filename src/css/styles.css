@@ -25,7 +25,7 @@
 
   /* Header */
   header {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(242, 241, 241, 0);
     padding: 20px 5%;
     height: 100px;
     position: fixed;
@@ -315,7 +315,7 @@
   #problema {
     background-color: #072f65;
     padding: 70px 5%;
-    color: #fff;
+    color:  var(--branco-gelo);
     width: 100%;
     text-align: center;
   }
@@ -362,105 +362,244 @@
     line-height: 1.5;
   }
   
-  #tecnologia {
-    background-color: #072f65;
-    padding: 70px 10%;
+ 
+  h2 {
     color: #fff;
+    font-size: 40px;
+    text-align: center;
     width: 100%;
   }
-  .solucoes {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin: 50px auto;
-    padding: 20px;
-    max-width: 1200px;
+  .solucoes-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Espaço entre os cards */
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .solucao {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.solucao img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
+    background-color:var(--azul-marinho);
+    padding: 16px;
+    border-radius: 16px;
+    text-align: center;
+    width: 500px; /* ← Aumentei de 230px para 300px */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
 }
 
 .solucao:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
 }
 
-.solucao:hover img {
-    transform: scale(1.1);
+.solucao img {
+    width: 100%;
+    border-radius: 10px;
 }
 
 .solucao-text {
-    padding: 15px;
-    text-align: center;
-    color: white;
+    font-size: 18px; /* ← Aumentei */
+    color: rgb(32, 210, 223);
+    margin-top: 10px;
     font-weight: bold;
-    font-size: 18px;
 }
-.solucao-text {
-  padding: 12px 15px;
-  text-align: center;
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
-  background: rgba(0, 0, 0, 0.4);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  user-select: none;
-}
+
 .solucao-desc {
-  font-size: 13px;
-  color: #ddd;
+    font-size: 14px; /* ← Aumentei */
+    color: #ddd;
+    margin-top: 6px;
+    font-weight: 400;
+    user-select: none;
+}
+#tecnologia {
+  background-color: #072f65;
+  padding: 70px 10%;
+  color: #fff;
+  width: 100%;
   text-align: center;
-  margin-top: 4px;
-  font-weight: 400;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  user-select: none;
 }
 
+#tecnologia h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
 
+#techlist ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 0;
+}
 
-  #techlist ul {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    list-style: none;
-    padding: 10;
-  }
+#techlist li {
+  background-color: #0b3a7a;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 300px;
+}
 
-  .tech-icon {
-    height: 100px;
-  }
+#techlist li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+}
 
-  #objetivo {
-    background-color: #072f65;
-    padding: 70px 10%;
-    color: #fff;
-    width: 100%;
-  }
+.tech-icon {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
 
-  #publico-alvo {
-    background-color: #072f65;
-    padding: 70px 10%;
-    color: #fff;
-    width: 100%;
-  }
+#techlist p {
+  margin-top: 15px;
+  font-size: 1.3em;
+  color: #fff;
+}
+
+/* Estilo da seção */
+#objetivo {
+  background: linear-gradient(135deg, #072f65, #0a417f);
+  padding: 80px 10%;
+  color: #fff;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título */
+#objetivo h2 {
+  text-align: center;
+  font-size: 3em;
+  color: #ffffff;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Container dos cards */
+.cards-objetivo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Cada card */
+.cards-objetivo .card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  width: 300px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+/* Efeito hover */
+.cards-objetivo .card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
+              0 0 25px rgba(77, 166, 255, 0.8);
+}
+
+/* Imagem dos cards */
+.cards-objetivo .card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+/* Título dentro do card */
+.cards-objetivo .card h3 {
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 1.4em;
+ 
+}
+
+/* Texto dos cards */
+.cards-objetivo .card p {
+  font-size: 1em;
+  color: #fff;
+  line-height: 1.6; 
+}
+
+  /* Seção Público-Alvo */
+#publico-alvo {
+  background: linear-gradient(135deg, #072f65, #0a417f);
+  padding: 80px 10%;
+  color: #fff;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título */
+#publico-alvo h2 {
+  text-align: center;
+  font-size: 3em;
+  color: #fff;
+  margin-bottom: 60px;
+  text-shadow: 0 0 8px #4da6ff, 0 0 15px #4da6ff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Container dos cards */
+.cards-publico {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Cada card */
+.cards-publico .card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  width: 300px;
+  padding: 25px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
+              0 0 15px rgba(77, 166, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+/* Efeito hover */
+.cards-publico .card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6),
+              0 0 25px rgba(77, 166, 255, 0.8);
+}
+
+/* Ícones Font Awesome */
+.cards-publico .card i {
+  font-size: 60px;
+  color: #4da6ff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(77, 166, 255, 0.8);
+}
+
+/* Título dentro do card */
+.cards-publico .card h3 {
+  margin-bottom: 15px;
+  color: #aad8ff;
+  font-size: 1.5em;
+  text-shadow: 0 0 5px #4da6ff;
+}
+
+/* Texto dos cards */
+.cards-publico .card p {
+  font-size: 1em;
+  color: #e0e7ff;
+  line-height: 1.6;
+}
 
   #beneficio {
     background-color: #072f65;

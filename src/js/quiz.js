@@ -1,4 +1,11 @@
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
 const quizData = [
+
     {
         question: "Qual é a principal causa dos alagamentos urbanos em São Paulo?",
         options: ["A) Chuvas intensas", "B) Descarte irregular de lixo", "C) Falta de drenagem adequada", "D) Todas as anteriores"],

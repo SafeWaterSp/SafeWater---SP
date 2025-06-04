@@ -1,13 +1,149 @@
-body, html {
+ /* Reset padrão */
+/* Reset padrão */
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
+  box-sizing: border-box;
 }
 
+/* Paleta de cores */
+:root {
+  --azul-marinho: #072f65;
+  --azul-oceano: #0c3868;
+  --azul-celeste: #0a60ac;
+  --azul-claro: #8dbfe5;
+  --branco-gelo: #cbdef1;
+}
+
+/* Body */
+body {
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--azul-marinho);
+  color: var(--branco-gelo);
+}
+
+/* Header */
+header {
+  background-color: rgba(7, 47, 101, 0.9); /* azul-marinho semi-transparente */
+  padding: 20px 5%;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+header .logo h1 {
+  color: var(--branco-gelo);
+  font-size: 24px;
+}
+
+/* Estilização do botão hamburguer */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  color: var(--branco-gelo);
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu ul li a {
+  color: var(--branco-gelo);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.menu ul li a:hover {
+  background-color: var(--azul-celeste);
+  color: white;
+}
+
+/* Configuração para telas menores */
+@media screen and (max-width: 1020px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--azul-oceano);
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    width: 200px;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 1001;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu ul li a {
+    color: white;
+    padding: 10px;
+    display: block;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+}
+
+/* Mapa ocupa toda a tela */
 #map {
   width: 100%;
   height: 100vh;
+  margin-top: 100px; /* Para não ficar escondido atrás do header */
 }
+
+/* Estilo da legenda do mapa */
+.leaflet-control.legend {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  line-height: 18px;
+  color: #333;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.leaflet-control.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.9;
+  border-radius: 50%;
+}
+
 
 /* Estilo da legenda */
 .leaflet-control.legend {
