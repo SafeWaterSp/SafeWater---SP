@@ -155,11 +155,13 @@ header {
 main {
     flex-grow: 1; /* Permite que o main ocupe o espaço restante */
     display: flex;
+    flex-direction: column; /* Changed to column to stack containers */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
     padding-top: 100px; /* Ajuste se o header fixo estiver cobrindo o conteúdo */
     padding-bottom: 50px; /* Espaço para o footer */
     width: 100%;
+    gap: 30px; /* Added gap between sections */
 }
 
 .container {
@@ -256,6 +258,52 @@ main {
     text-align: center;
 }
 
+/* NOVOS ESTILOS DA SEÇÃO DE VÍDEO */
+.video-container {
+    background-color: var(--azul-oceano);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    max-width: 800px; /* Mais largo para o vídeo */
+    width: 90%;
+    color: var(--branco-gelo);
+}
+
+.video-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--branco-gelo);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.video-container p {
+    font-size: 1em;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção de aspeto 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* FIM DOS NOVOS ESTILOS DA SEÇÃO DE VÍDEO */
+
 /* Footer - Padronizado */
 footer {
     background-color: var(--azul-oceano); /* Fundo do footer */
@@ -297,16 +345,20 @@ footer p {
 
 /* Media queries para responsividade do main content */
 @media screen and (max-width: 768px) {
-    .container {
+    .container, .video-container { /* Apply to both containers */
         padding: 30px;
-        margin-top: 0; /* Removido para que o main centralize */
+        margin-top: 0;
     }
 
     .container h1 {
         font-size: 2em;
     }
 
-    .container p {
+    .video-container h2 {
+        font-size: 1.8em;
+    }
+
+    .container p, .video-container p {
         font-size: 1em;
     }
 
@@ -318,7 +370,7 @@ footer p {
 }
 
 @media screen and (max-width: 480px) {
-    .container {
+    .container, .video-container { /* Apply to both containers */
         padding: 20px;
         width: 95%;
     }
@@ -327,8 +379,12 @@ footer p {
         font-size: 1.8em;
     }
 
+    .video-container h2 {
+        font-size: 1.6em;
+    }
+
     .container button {
-        width: 100%; /* Botões ocupam a largura total em telas muito pequenas */
+        width: 100%;
         margin: 10px 0;
     }
 }

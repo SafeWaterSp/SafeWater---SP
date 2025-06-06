@@ -2,9 +2,9 @@
 window.addEventListener("scroll", function () {
     let header = document.querySelector("header");
     if (window.scrollY > 10) {
-        header.style.backgroundColor = "#072f65"; // Azul sólido
+        header.style.backgroundColor = "var(--header-scroll-bg)"; // Azul sólido
     } else {
-        header.style.backgroundColor = "rgba(0, 0, 128, 0)"; // Transparente
+        header.style.backgroundColor = "var(--header-bg)"; // Transparente
     }
 });
 
@@ -16,12 +16,10 @@ document.querySelector(".menu-toggle").addEventListener("click", function () {
 // Slideshow automático + manual
 let slideIndex = 0;
 let slideTimer;
-
 function showSlides(index = null) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
-
     // Se index for passado manualmente (via botão)
     if (index !== null) {
         slideIndex = index;
@@ -67,6 +65,34 @@ function prevSlide() {
 // Adiciona evento aos botões
 document.querySelector(".prev").addEventListener("click", prevSlide);
 document.querySelector(".next").addEventListener("click", nextSlide);
-
 // Inicia o slideshow ao carregar
 showSlides();
+
+// Theme switcher logic
+document.addEventListener("DOMContentLoaded", function() {
+    const themeSelect = document.getElementById("theme-select");
+    const body = document.body;
+
+    // Load saved theme from local storage
+    const savedTheme = localStorage.getItem("safewater-theme");
+    if (savedTheme) {
+        body.classList.add(`theme-${savedTheme}`);
+        themeSelect.value = savedTheme;
+    } else {
+        // Set default theme if no theme is saved
+        body.classList.add("theme-ocean");
+    }
+
+    themeSelect.addEventListener("change", function() {
+        const selectedTheme = this.value;
+
+        // Remove all existing theme classes
+        body.classList.remove("theme-ocean", "theme-forest", "theme-sunset");
+
+        // Add the selected theme class
+        body.classList.add(`theme-${selectedTheme}`);
+
+        // Save selected theme to local storage
+        localStorage.setItem("safewater-theme", selectedTheme);
+    });
+});
