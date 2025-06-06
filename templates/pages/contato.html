@@ -6,22 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Safe Water SP</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/contato.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contato.css') }}">
 </head>
 
 <body>
 
-    <!-- Header -->
     <header>
         <div class="navbar">
-            <img id="logo_img" src="../../src/assets/logo.png" alt="Logo Safe Water">
+            <img id="logo_img" src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo Safe Water">
             <button class="menu-toggle">&#9776;</button>
             <nav class="menu">
                 <ul>
-                    <li><a href="../../index.html">Início</a></li>
-                    <li><a href="quiz.html">Quiz</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="{{ url_for('index') }}">Início</a></li>
+                    <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+                    <li><a href="{{ url_for('mapa') }}">Mapa</a></li>
+                    <li><a href="{{ url_for('contato') }}">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -60,7 +59,7 @@
 
     <footer>&copy; 2025 Safe Water - SP</footer>
 
-    <script src="src/js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>

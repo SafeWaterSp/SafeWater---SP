@@ -1,0 +1,334 @@
+/* Reset padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Paleta de cores */
+:root {
+    --azul-marinho: #072f65;
+    --azul-oceano: #0c3868;
+    --azul-celeste: #0a60ac;
+    --azul-claro: #8dbfe5;
+    --branco-gelo: #cbdef1;
+    --cinza-claro: #f4f4f4;
+    --cinza-escuro: #333;
+    --verde-alerta: #28a745;
+    --vermelho-alerta: #dc3545;
+}
+
+/* Body */
+body {
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--azul-marinho);
+    color: var(--branco-gelo);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header - Padronizado com index.html */
+header {
+    background-color: rgba(242, 241, 241, 0); /* Transparente */
+    padding: 20px 5%;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000; /* Z-index alto para garantir que o header fique por cima */
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    margin: 0;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Logo */
+#logo_img {
+    height: 120px;
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.8));
+}
+
+/* Estilização do botão hamburguer */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Escondido por padrão em telas maiores */
+    color: #fff;
+    z-index: 1001; /* Z-index ainda mais alto para o botão */
+}
+
+/* Menu principal (desktop) */
+.menu {
+    font-weight: 700;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 8px 16px;
+    margin: 0;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 10px 10px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.menu ul li a:hover {
+    background-color: #fff;
+    color: var(--azul-marinho);
+}
+
+/* Configuração para telas menores (menu hambúrguer) */
+@media screen and (max-width: 1020px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 30px;
+    }
+
+    .menu {
+        background-color: var(--azul-oceano); /* Pode ajustar para black se preferir */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 100px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 10;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu ul li a {
+        color: #fff;
+        padding: 10px;
+        display: block;
+    }
+
+    .menu ul li a:hover {
+        background-color: #fff;
+        color: var(--azul-marinho);
+    }
+
+    .menu.active {
+        display: flex;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* Estilos específicos para monitoramento.html */
+/* ---------------------------------------------------- */
+
+main {
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding-top: 100px; /* Ajuste se o header fixo estiver cobrindo o conteúdo */
+    padding-bottom: 50px; /* Espaço para o footer */
+    width: 100%;
+}
+
+.container {
+    background-color: var(--azul-oceano); /* Fundo do container principal */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    max-width: 600px; /* Largura máxima do container */
+    width: 90%; /* Ocupa 90% da largura disponível, até o max-width */
+    color: var(--branco-gelo);
+}
+
+.container h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: var(--branco-gelo);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.container label {
+    display: block; /* Garante que o label ocupe sua própria linha */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--azul-claro);
+}
+
+.container input[type="text"] {
+    width: calc(100% - 20px); /* Ocupa quase toda a largura com padding */
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 2px solid var(--azul-celeste);
+    border-radius: 8px;
+    background-color: var(--azul-marinho);
+    color: var(--branco-gelo);
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.container input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.container input[type="text"]:focus {
+    border-color: var(--azul-claro);
+    box-shadow: 0 0 8px rgba(141, 191, 229, 0.5);
+}
+
+.container button {
+    background-color: var(--azul-celeste); /* Cor do botão */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px; /* Espaçamento entre botões */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.container button:hover {
+    background-color: var(--azul-oceano); /* Cor mais escura no hover */
+    transform: translateY(-2px); /* Efeito de "levantar" */
+}
+
+.container button:active {
+    transform: translateY(0); /* Efeito de "clique" */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para o resultado da previsão */
+#resultado-previsao {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--azul-marinho);
+    border: 1px solid var(--azul-celeste);
+    border-radius: 8px;
+    min-height: 50px; /* Altura mínima para mostrar algo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: var(--branco-gelo);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Footer - Padronizado */
+footer {
+    background-color: var(--azul-oceano); /* Fundo do footer */
+    color: var(--branco-gelo);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Garante que o footer fique no final da página */
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que o conteúdo do footer quebre a linha */
+    gap: 15px; /* Espaçamento entre os itens do footer */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.github-link {
+    color: var(--branco-gelo);
+    text-decoration: none;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.github-link:hover {
+    color: var(--azul-claro);
+}
+
+.github-link i {
+    font-size: 1.2em;
+}
+
+/* Media queries para responsividade do main content */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 30px;
+        margin-top: 0; /* Removido para que o main centralize */
+    }
+
+    .container h1 {
+        font-size: 2em;
+    }
+
+    .container p {
+        font-size: 1em;
+    }
+
+    .container input[type="text"],
+    .container button {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .container h1 {
+        font-size: 1.8em;
+    }
+
+    .container button {
+        width: 100%; /* Botões ocupam a largura total em telas muito pequenas */
+        margin: 10px 0;
+    }
+}

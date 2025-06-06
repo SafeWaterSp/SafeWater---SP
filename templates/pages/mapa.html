@@ -5,22 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mapa de Enchentes - São Paulo</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <!-- Adicionado: Importação da fonte Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/mapa.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/mapa.css') }}">
 </head>
 
 <body>
    <header>
         <div class="navbar">
-            <img id="logo_img" src="../../src/assets/logo.png" alt="Logo Safe Water">
+            <img id="logo_img" src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo Safe Water">
             <button class="menu-toggle">&#9776;</button>
             <nav class="menu">
                 <ul>
-                    <li><a href="../../index.html">Início</a></li>
-                    <li><a href="quiz.html">Quiz</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="{{ url_for('index') }}">Início</a></li>
+                    <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+                    <li><a href="{{ url_for('mapa') }}">Mapa</a></li>
+                    <li><a href="{{ url_for('contato') }}">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -29,7 +28,7 @@
   <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="../js/mapa.js"></script>
+  <script src="{{ url_for('static', filename='js/mapa.js') }}"></script>
 </body>
 
 </html>

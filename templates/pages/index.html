@@ -5,28 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Safe Water - SP</title>
 </head>
 
 <body>
     <header>
         <div class="navbar">
-            <img id="logo_img" src="src/assets/logo.png" alt="Logo">
+            <img id="logo_img" src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo">
             <button class="menu-toggle">&#9776;</button>
             <nav class="menu">
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="src/pages/quiz.html">Quiz</a></li>
-                    <li><a href="src/pages/mapa.html">Mapa</a></li>
-                    <li><a href="src/pages/contato.html">Contato</a></li>
+                    <li><a href="{{ url_for('index') }}">Início</a></li>
+                    <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+                    <li><a href="{{ url_for('mapa') }}">Mapa</a></li>
+                    <li><a href="{{ url_for('contato') }}">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div id="slider-container">
-        <img class="banner" src="./src/assets/img/wallpaperflare.com_wallpaper.jpg" alt="São Paulo">
+        <img class="banner" src="{{ url_for('static', filename='assets/img/wallpaperflare.com_wallpaper.jpg') }}" alt="São Paulo">
+        <div class="banner-content">
+            <h1>Quer saber as possibilidades de enchentes em sua região?</h1>
+            <a href="{{ url_for('monitoramento') }}" class="button">Saiba Mais</a>
+        </div>
     </div>
     <div class="sections">
         <li><a href="#problema">Problema</a></li>
@@ -47,17 +51,17 @@
 
             <div class="slideshow-container">
                 <div class="mySlides fade">
-                    <img src="src/assets/img/resgate-realizado-em-alagamento-na-marginal-tiete-na-altura-da-ponte-das-bandeiras-1581342447312_v2_1920x1280.jpg"
+                    <img src="{{ url_for('static', filename='assets/img/resgate-realizado-em-alagamento-na-marginal-tiete-na-altura-da-ponte-das-bandeiras-1581342447312_v2_1920x1280.jpg') }}"
                         style="width:100%">
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="src/assets/img/carro-ficou-submerso-devido-a-alagamento-na-ponte-cidade-jardim-em-sao-paulo-1581330036859_v2_1920x1279.jpg"
+                    <img src="{{ url_for('static', filename='assets/img/carro-ficou-submerso-devido-a-alagamento-na-ponte-cidade-jardim-em-sao-paulo-1581330036859_v2_1920x1279.jpg') }}"
                         style="width:100%">
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="src/assets/img/ponto-de-alagamento-na-rua-cantareira-na-regiao-do-mercado-municipal-em-sao-paulo-sp-1581332444752_v2_1920x1280 (1).jpg"
+                    <img src="{{ url_for('static', filename='assets/img/ponto-de-alagamento-na-rua-cantareira-na-regiao-do-mercado-municipal-em-sao-paulo-sp-1581332444752_v2_1920x1280 (1).jpg') }}"
                         style="width:100%">
                 </div>
 
@@ -89,13 +93,13 @@
                 <div class="solucoes-container">
 
                     <div class="solucao">
-                        <img src="src/assets/img/wokwi-image.png" alt="Simulador de Sensor">
+                        <img src="{{ url_for('static', filename='assets/img/wokwi-image.png') }}" alt="Simulador de Sensor">
                         <div class="solucao-text">Simulador IoT</div>
                         <div class="solucao-desc">Teste e simule sensores IoT em um ambiente virtual interativo.</div>
                     </div>
 
                     <div class="solucao">
-                        <img src="src/assets/img/WhatsApp Image 2025-06-04 at 09.13.33.jpeg"
+                        <img src="{{ url_for('static', filename='assets/img/WhatsApp Image 2025-06-04 at 09.13.33.jpeg') }}"
                             alt="Dashboard de Monitoramento">
                         <div class="solucao-text">Dashboard de Monitoramento</div>
                         <div class="solucao-desc">Visualize dados em tempo real e controle seus sensores.</div>
@@ -107,27 +111,27 @@
                     <div id="techlist">
                         <ul>
                             <li>
-                                <img class="tech-icon" src="src/assets/img/js.png" alt="JavaScript">
+                                <img class="tech-icon" src="{{ url_for('static', filename='assets/img/js.png') }}" alt="JavaScript">
                                 <p>JavaScript</p>
                             </li>
                             <li>
-                                <img class="tech-icon" src="src/assets/img/html.png" alt="HTML5">
+                                <img class="tech-icon" src="{{ url_for('static', filename='assets/img/html.png') }}" alt="HTML5">
                                 <p>HTML5</p>
                             </li>
                             <li>
-                                <img class="tech-icon" src="src/assets/img/css.png" alt="CSS3">
+                                <img class="tech-icon" src="{{ url_for('static', filename='assets/img/css.png') }}" alt="CSS3">
                                 <p>CSS3</p>
                             </li>
                             <li>
-                                <img class="tech-icon" src="src/assets/img/python-logo.png" alt="Python">
+                                <img class="tech-icon" src="{{ url_for('static', filename='assets/img/python-logo.png') }}" alt="Python">
                                 <p>Python</p>
                             </li>
                             <li>
-                                <img class="tech-icon" src="src/assets/img/icons8-git-480.png" alt="Git">
+                                <img class="tech-icon" src="{{ url_for('static', filename='assets/img/icons8-git-480.png') }}" alt="Git">
                                 <p>Git</p>
                             </li>
                             <li>
-                                <img class="tech-icon" src="src/assets/img/icons8-github-500.png" alt="GitHub">
+                                <img class="tech-icon" src="{{ url_for('static', filename='assets/img/icons8-github-500.png') }}" alt="GitHub">
                                 <p>GitHub</p>
                             </li>
                         </ul>
@@ -216,7 +220,7 @@
                             <i class="fas fa-globe"></i>
                             <h3>Sustentabilidade</h3>
                             <p>Contribui para soluções urbanas mais eficientes e resilientes.</p>
-                        </div>
+                        (>
                     </div>
                     </section>
                     <section id="impacto">
@@ -237,7 +241,7 @@
             </div>
         </main>
 
-        <script src="src/js/script.js"></script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 <footer>
     <p>&copy; SafeWater - SP</p>

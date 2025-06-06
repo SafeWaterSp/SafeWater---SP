@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão de Chuva</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/previsao.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <img id="logo_img" src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo Safe Water">
+            <button class="menu-toggle">&#9776;</button>
+            <nav class="menu">
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Início</a></li>
+                    <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+                    <li><a href="{{ url_for('mapa') }}">Mapa</a></li>
+                    <li><a href="{{ url_for('contato') }}">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>🌧️ Previsão de Chuva</h1>
+
+        <div class="mapa">
+            {{ mapa|safe }}
+        </div>
+
+        {% if previsao_agora %}
+        <div class="previsao-agora-card">
+            <h2>Previsão Agora ({{ previsao_agora.time }})</h2>
+            <div class="agora-details">
+                <p><strong>Precipitação:</strong> {{ previsao_agora.precip }} mm</p>
+                <p>
+                    <strong>Nível de Risco:</strong>
+                    <span class="risk-dot {{ previsao_agora.risco_class }}"></span>
+                    {{ previsao_agora.risco_text }}
+                </p>
+            </div>
+        </div>
+
+        <div class="risk-bar-container">
+            <h3>Escala de Risco</h3>
+            <div class="risk-bar">
+                <div class="risk-segment low">Baixo</div>
+                <div class="risk-segment medium">Médio</div>
+                <div class="risk-segment high">Alto</div>
+                <div class="risk-segment very-high">Muito Alto</div>
+                </div>
+            </div>
+        {% endif %}
+        <h2>Próximas Horas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data e Hora</th>
+                    <th>Precipitação (mm)</th>
+                    <th>Nível de Risco</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ linhas|safe }}
+            </tbody>
+        </table>
+
+        <br>
+        <p><strong>Status SMS:</strong> {{ resultado_sms }}</p>
+
+        <a class="voltar" href="/">⮐ Voltar</a>
+    </div>
+</body>
+
+</html>

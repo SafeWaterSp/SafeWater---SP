@@ -1,0 +1,534 @@
+/* No seu previsao.css, adicione/modifique: */
+
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Color Palette - Updated for a more elegant feel */
+:root {
+    --primary-dark: #2c3e50; /* Azul-acinzentado profundo */
+    --primary-medium: #34495e; /* Azul-acinzentado um pouco mais claro */
+    --accent-blue: #3498db; /* Azul vibrante para detalhes */
+    --light-gray: #ecf0f1; /* Off-white para fundos */
+    --text-dark: #2c3e50; /* Texto escuro para contraste */
+    --text-light: #ecf0f1; /* Light text for dark backgrounds */
+    --success-color: #27ae60; /* Green for success/alert */
+    --medium-color: #f39c12; /* Laranja para Médio */
+    --high-color: #e67e22; /* Laranja avermelhado para Alto */
+    --very-high-color: #c0392b; /* Vermelho escuro para Muito Alto */
+    --danger-color: #e74c3c; /* Red for danger/alert (mantido, mas preferencialmente usar very-high-color para consistência) */
+}
+
+/* Body */
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, var(--primary-dark), var(--primary-medium));
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}
+
+/* Header - Standardized with index.html */
+header {
+    background-color: rgba(242, 241, 241, 0);
+    padding: 20px 5%;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    margin: 0;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Logo */
+#logo_img {
+    height: 120px;
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.8));
+}
+
+/* Hamburger menu button */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    color: var(--text-light);
+    z-index: 1001;
+}
+
+/* Main menu (desktop) */
+.menu {
+    font-weight: 700;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 8px 16px;
+    margin: 0;
+}
+
+.menu ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 10px 10px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.menu ul li a:hover {
+    background-color: var(--accent-blue);
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive settings (hamburger menu) */
+@media screen and (max-width: 1020px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 30px;
+    }
+
+    .menu {
+        background-color: var(--primary-medium);
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 100px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 10;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu ul li a {
+        color: var(--text-light);
+        padding: 10px;
+        display: block;
+    }
+
+    .menu ul li a:hover {
+        background-color: var(--accent-blue);
+        color: var(--text-light);
+    }
+
+    .menu.active {
+        display: flex;
+    }
+}
+
+/* Main content container */
+.container {
+    max-width: 900px;
+    margin: 120px auto 40px auto;
+    background: var(--light-gray);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    color: var(--text-dark);
+}
+
+/* Headings */
+h1, h2, h3 { /* Adicionado h3 aqui */
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+h1::before, h1::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--primary-medium);
+    margin: 0 15px;
+}
+
+/* Buttons and links */
+button, .voltar {
+    background-color: var(--accent-blue);
+    color: var(--text-light);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 25px;
+    font-weight: 500;
+}
+
+button:hover, .voltar:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Map section */
+.mapa {
+    margin: 30px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    height: 0;
+    padding-bottom: 65%;
+    position: relative;
+    background-color: #e0e0e0;
+}
+
+.mapa iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* SMS Status */
+.container p {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 40px auto;
+    padding: 25px 30px;
+    border-radius: 12px;
+    background-color: var(--text-light);
+    border: 2px solid var(--accent-blue);
+    display: block;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    color: var(--primary-dark);
+    line-height: 1.3;
+    max-width: 70%;
+}
+
+.container p strong {
+    color: var(--primary-dark);
+}
+
+.container p.success {
+    background-color: #e6ffe6;
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.container p.error {
+    background-color: #ffe6e6;
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+/* Estilo para a Previsão Agora */
+.previsao-agora-card {
+    background-color: var(--text-light);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 700px;
+    text-align: center;
+    color: var(--primary-dark);
+    border: 1px solid var(--accent-blue);
+}
+
+.previsao-agora-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: var(--primary-dark);
+}
+
+.previsao-agora-card .agora-details p {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.previsao-agora-card .agora-details p strong {
+    color: var(--primary-medium);
+}
+
+/* Pontos de risco (bolinhas) */
+.risk-dot {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2); /* Sombra sutil para a bolinha */
+}
+
+.risk-dot.low {
+    background-color: var(--success-color); /* Verde */
+}
+
+.risk-dot.medium {
+    background-color: var(--medium-color); /* Laranja */
+}
+
+.risk-dot.high {
+    background-color: var(--high-color); /* Laranja avermelhado */
+}
+
+.risk-dot.very-high {
+    background-color: var(--very-high-color); /* Vermelho escuro */
+}
+
+
+/* Título "Próximas Horas" */
+.container h2:nth-of-type(1) {
+    font-size: 2.2em;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: var(--primary-dark);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.container h2:nth-of-type(1)::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-blue);
+    border-radius: 2px;
+}
+
+/* Estilos da Tabela */
+table {
+    width: 100%;
+    margin: 30px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    font-size: 1.1em;
+}
+
+table th, table td {
+    padding: 20px 25px;
+    border: none;
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap; /* Evita que o texto quebre */
+}
+
+table th {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f5f7;
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+table td {
+    color: var(--text-dark);
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.1em;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table td:nth-child(3) { /* Coluna "Nível de Risco" */
+    text-align: center;
+    /* Ajustes para alinhar o conteúdo da célula */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Espaço entre a bolinha e o texto */
+}
+
+/* --- ESTILOS PARA A NOVA BARRINHA DE RISCO --- */
+.risk-bar-container {
+    background-color: var(--text-light);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px; /* Mais preenchimento */
+    margin: 50px auto; /* Mais espaçamento */
+    max-width: 700px;
+    text-align: center;
+    color: var(--primary-dark);
+    border: 1px solid var(--accent-blue);
+}
+
+.risk-bar-container h3 {
+    font-size: 1.6em; /* Título da escala */
+    margin-bottom: 25px;
+    color: var(--primary-dark);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.risk-bar-container h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-blue);
+    border-radius: 1px;
+}
+
+.risk-bar {
+    display: flex; /* Para os segmentos ficarem lado a lado */
+    width: 100%;
+    height: 40px; /* Altura da barra */
+    border-radius: 8px;
+    overflow: hidden; /* Garante que os cantos arredondados funcionem */
+    border: 1px solid var(--primary-medium); /* Borda sutil na barra */
+}
+
+.risk-segment {
+    flex-grow: 1; /* Faz com que cada segmento ocupe o mesmo espaço */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light); /* Texto branco para os segmentos coloridos */
+    font-weight: 600;
+    font-size: 0.95em; /* Tamanho da fonte dos rótulos */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Sombra para o texto */
+    transition: all 0.3s ease; /* Transição suave para hover */
+    cursor: help; /* Indica que é informativo */
+}
+
+/* Cores dos segmentos da barra */
+.risk-segment.low {
+    background-color: var(--success-color);
+}
+
+.risk-segment.medium {
+    background-color: var(--medium-color);
+}
+
+.risk-segment.high {
+    background-color: var(--high-color);
+}
+
+.risk-segment.very-high {
+    background-color: var(--very-high-color);
+}
+
+/* Efeito de hover nos segmentos */
+.risk-segment:hover {
+    transform: translateY(-3px); /* Leve levantamento */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1; /* Garante que o hover fique por cima */
+}
+
+
+/* Ajustes para responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 80px auto 20px auto;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .previsao-agora-card, .risk-bar-container {
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .previsao-agora-card h2 {
+        font-size: 1.5em;
+    }
+
+    .previsao-agora-card .agora-details p {
+        font-size: 1.1em;
+        flex-direction: column; /* Em telas menores, alinhar detalhes verticalmente */
+        gap: 5px;
+    }
+
+    .risk-bar {
+        height: 30px; /* Altura menor em telas menores */
+    }
+
+    .risk-segment {
+        font-size: 0.8em;
+    }
+
+    table th, table td {
+        padding: 12px 15px; /* Menor padding para células */
+        font-size: 0.9em;
+    }
+}
+
+/* Garantindo que as bolinhas de risco na tabela fiquem centralizadas */
+table td:nth-child(3) {
+    /* Centraliza o conteúdo da célula, incluindo a bolinha e o texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Espaçamento entre a bolinha e o texto */
+}
