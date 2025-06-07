@@ -276,3 +276,116 @@ footer {
     display: flex;
   }
 }
+
+/* -------------------------------------- */
+/* DARK MODE STYLES FOR QUIZ             */
+/* -------------------------------------- */
+
+body.dark-mode {
+    /* Sobrescreve as variáveis de cor para o modo escuro */
+    --azul-marinho: #0a0a0a; /* Fundo principal escuro */
+    --azul-oceano: #1a1a1a; /* Fundo de elementos um pouco mais claro */
+    --azul-celeste: #333333; /* Elementos mais claros */
+    --azul-claro: #555555; /* Detalhes e bordas */
+    --branco-gelo: #cccccc; /* Texto principal mais claro */
+    background-color: var(--azul-marinho);
+    color: var(--branco-gelo);
+}
+
+/* Header, Navbar, Logo (shared with index.html) */
+body.dark-mode header {
+    background-color: rgba(26, 26, 26, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode #logo_img {
+    filter: drop-shadow(4px 4px 6px rgba(255, 255, 255, 0.2));
+}
+
+body.dark-mode .navbar .menu ul li a {
+    color: var(--branco-gelo);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .navbar .menu ul li a:hover {
+    background-color: var(--azul-claro);
+    color: #fff;
+}
+
+/* Mobile Menu Styling in Dark Mode */
+@media screen and (max-width: 1020px) {
+    body.dark-mode .menu {
+        background-color: var(--azul-oceano); /* Usar variável para consistência */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    }
+    body.dark-mode .menu ul li a {
+        color: var(--branco-gelo);
+    }
+    body.dark-mode .menu ul li a:hover {
+        background-color: var(--azul-claro);
+        color: var(--azul-marinho); /* Ou #fff se preferir */
+    }
+    body.dark-mode .menu-toggle {
+        color: var(--branco-gelo); /* Cor do ícone do hambúrguer */
+    }
+}
+
+/* QUIZ Specific Styles in Dark Mode */
+body.dark-mode .quiz-container {
+    background-color: var(--azul-oceano); /* Fundo do quiz */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    color: var(--branco-gelo); /* Cor do texto dentro do container */
+}
+
+body.dark-mode .quiz-container h2 {
+    color: var(--branco-gelo); /* Título do quiz */
+}
+
+body.dark-mode .quiz-question {
+    color: var(--branco-gelo); /* Texto da pergunta */
+}
+
+body.dark-mode .quiz-options li button {
+    background-color: var(--azul-celeste); /* Botões de opção */
+    color: var(--branco-gelo);
+    border: 1px solid var(--azul-claro); /* Adicionar borda para destaque */
+}
+
+body.dark-mode .quiz-options li button:hover {
+    background-color: var(--azul-claro); /* Hover dos botões de opção */
+    color: var(--azul-marinho); /* Texto mais escuro no hover */
+}
+
+/* Estilo para a opção correta/selecionada (você pode ter classes para isso no JS) */
+body.dark-mode .quiz-options li button.selected {
+    background-color: #4CAF50; /* Verde para seleção (exemplo) */
+    color: white;
+}
+
+body.dark-mode .quiz-options li button.correct {
+    background-color: #4CAF50; /* Verde para correto */
+    color: white;
+}
+
+body.dark-mode .quiz-options li button.incorrect {
+    background-color: #f44336; /* Vermelho para incorreto */
+    color: white;
+}
+
+
+body.dark-mode .quiz-next {
+    background-color: var(--azul-celeste); /* Botão próxima pergunta */
+    color: var(--branco-gelo);
+}
+
+body.dark-mode .quiz-next:hover {
+    background-color: var(--azul-claro);
+    color: var(--azul-marinho);
+}
+
+/* Footer in Dark Mode */
+body.dark-mode footer {
+    background-color: var(--azul-oceano);
+    color: var(--branco-gelo);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}

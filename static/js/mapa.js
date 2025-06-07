@@ -1,44 +1,23 @@
 // Lógica para a mudança de cor do header ao rolar a página, padronizada com index.html
 window.addEventListener("scroll", function () {
     let header = document.querySelector("header");
-    // Verifica se o header existe antes de tentar modificar seu estilo
     if (header) {
         if (window.scrollY > 10) {
-            header.style.backgroundColor = "#072f65"; // Azul sólido, como no index.html
+            header.style.backgroundColor = "#072f65";
         } else {
-            header.style.backgroundColor = "rgba(242, 241, 241, 0)"; // Transparente, como no index.html
+            header.style.backgroundColor = "rgba(242, 241, 241, 0)";
         }
     }
 });
 
-// Lógica para o menu hambúrguer responsivo
-// Seleciona o botão de alternância do menu e o elemento do menu de navegação
-const toggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
-
-// Adiciona um ouvinte de evento de clique ao botão de alternância do menu
-if (toggle && menu) { // Garante que os elementos existem antes de adicionar o listener
-    toggle.addEventListener('click', () => {
-        // Alterna a classe 'active' no menu para mostrar/ocultar
-        menu.classList.toggle('active');
-    });
-} else {
-    console.error("Elementos '.menu-toggle' ou '.menu' não encontrados. O menu responsivo pode não funcionar.");
-}
-
-
-// Inicializa o mapa centralizado em São Paulo
+// Lógica do mapa (já está boa, não precisa de DOMContentLoaded porque o #map já existe no HTML)
 const map = L.map('map').setView([-23.5505, -46.6333], 11);
 
-// Camada base OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap'
 }).addTo(map);
 
-// Chave da API OpenWeather (Substitua por sua chave real)
-const apiKey = 'SUA_API_KEY_AQUI'; // Lembre-se de substituir 'SUA_API_KEY_AQUI' pela sua chave da API OpenWeatherMap
-
-// Camada de radar de chuva (Precipitação)
+const apiKey = 'SUA_API_KEY_AQUI'; 
 const rainLayer = L.tileLayer(
     `https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${apiKey}`, {
         attribution: 'Dados do mapa © OpenWeatherMap',
@@ -47,7 +26,6 @@ const rainLayer = L.tileLayer(
 );
 rainLayer.addTo(map);
 
-// 🔴 Locais de risco de enchente em São Paulo
 const enchentes = [
     { nome: "Marginal Tietê", coords: [-23.5175, -46.6456] },
     { nome: "Marginal Pinheiros", coords: [-23.5845, -46.7095] },
@@ -71,7 +49,16 @@ const enchentes = [
     { nome: "Parelheiros", coords: [-23.8656, -46.7178] }
 ];
 
-// 🔵 Rios principais de São Paulo
+enchentes.forEach(local => {
+    L.circle(local.coords, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.4,
+        radius: 1000
+    }).addTo(map)
+      .bindPopup(`<b>${local.nome}</b><br>Área com risco de enchente.`);
+});
+
 const rios = [
     { nome: "Rio Tietê", coords: [-23.5175, -46.6456] },
     { nome: "Rio Pinheiros", coords: [-23.5845, -46.7095] },
@@ -80,22 +67,10 @@ const rios = [
     { nome: "Rio Anhangabaú", coords: [-23.5458, -46.6355] }
 ];
 
-// 🔴 Adiciona círculos para as áreas de enchente
-enchentes.forEach(local => {
-    L.circle(local.coords, {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.4,
-        radius: 1000 // Raio em metros (ajustável)
-    }).addTo(map)
-      .bindPopup(`<b>${local.nome}</b><br>Área com risco de enchente.`);
-});
-
-// 🔵 Adiciona marcadores dos rios
 rios.forEach(rio => {
     L.marker(rio.coords, {
         icon: L.icon({
-            iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png', // Ícone de marcador azul
+            iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
             iconSize: [32, 32],
             iconAnchor: [16, 32],
             popupAnchor: [0, -32]
@@ -104,7 +79,6 @@ rios.forEach(rio => {
       .bindPopup(`<b>${rio.nome}</b><br>Rio de São Paulo.`);
 });
 
-// ✅ Legenda do mapa
 const legenda = L.control({ position: 'bottomright' });
 
 legenda.onAdd = function (map) {
@@ -115,3 +89,22 @@ legenda.onAdd = function (map) {
 };
 
 legenda.addTo(map);
+
+// Lógica para o menu hambúrguer responsivo, GARANTINDO que o DOM esteja carregado
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded disparado em mapa.js'); // ✅ Adicionado para depuração
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    console.log('menu-toggle encontrado:', toggle); // ✅ Adicionado para depuração
+    console.log('menu encontrado:', menu);         // ✅ Adicionado para depuração
+
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+            console.log('Botão menu-toggle clicado!'); // ✅ Adicionado para depuração
+            menu.classList.toggle('active');
+        });
+    } else {
+        console.error("Elementos '.menu-toggle' ou '.menu' não encontrados para o menu responsivo em mapa.js.");
+    }
+});
