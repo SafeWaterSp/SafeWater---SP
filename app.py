@@ -7,6 +7,8 @@ import pytz
 import os
 from dotenv import load_dotenv # Importar para carregar .env
 
+# ... (seu código anterior)
+
 # Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
 
