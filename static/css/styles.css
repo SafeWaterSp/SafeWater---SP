@@ -876,3 +876,277 @@ footer {
 .solucao img:hover {
     filter: brightness(70%);
 }
+
+/* -------------------------------------- */
+/* DARK MODE STYLES               */
+/* -------------------------------------- */
+
+/* Dark Mode - Root Variables Override */
+body.dark-mode {
+    --azul-marinho: #0a0a0a; /* Fundo escuro */
+    --azul-oceano: #1a1a1a; /* Fundo de elementos um pouco mais claro que o marinho */
+    --azul-celeste: #333333; /* Elementos mais claros, como navegação secundária */
+    --azul-claro: #555555; /* Detalhes e bordas claras */
+    --branco-gelo: #cccccc; /* Texto principal mais claro */
+    color: var(--branco-gelo); /* Cor do texto padrão do body */
+}
+
+/* Dark Mode - Header and Navbar */
+body.dark-mode header {
+    background-color: rgba(26, 26, 26, 0.9); /* Header com transparência escura */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode #logo_img {
+    filter: drop-shadow(4px 4px 6px rgba(255, 255, 255, 0.2)); /* Sombra clara para logo */
+}
+
+body.dark-mode nav ul li a {
+    color: var(--branco-gelo);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode nav ul li a:hover {
+    background-color: var(--azul-claro); /* Fundo claro para hover no Dark Mode */
+    color: #fff; /* Texto escuro no hover */
+}
+
+/* Dark Mode - Mobile Menu */
+body.dark-mode .menu {
+    background-color: var(--azul-oceano); /* Fundo escuro para menu mobile */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .menu ul li a {
+    color: var(--branco-gelo);
+}
+
+/* Dark Mode - Sections Navigation (Internal Links) */
+body.dark-mode .sections {
+    background-color: var(--azul-oceano); /* Fundo escuro */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .sections a {
+    color: var(--branco-gelo);
+}
+
+body.dark-mode .sections a:hover {
+    background-color: var(--azul-claro); /* Fundo um pouco mais claro no hover */
+    color: var(--azul-marinho); /* Texto mais escuro no hover */
+}
+
+/* Dark Mode - Enchentes Section (info-enchente and slideshow) */
+body.dark-mode #enchentes {
+    background-color: var(--azul-marinho); /* Fundo da seção */
+    color: var(--branco-gelo);
+}
+
+body.dark-mode .info-enchente {
+    background-color: var(--azul-oceano); /* Fundo do box de informação */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .info-enchente h2,
+body.dark-mode .info-enchente p {
+    color: var(--branco-gelo);
+}
+
+body.dark-mode .slideshow-container {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Dark Mode - Problem Section */
+body.dark-mode #problema {
+    background-color: var(--azul-marinho);
+    color: var(--branco-gelo);
+}
+
+body.dark-mode .card-problema {
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo translúcido claro */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .card-problema:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .card-problema i {
+    color: var(--azul-claro); /* Ícones com cor do modo claro */
+}
+
+/* Dark Mode - Solutions Section */
+body.dark-mode .solucao {
+    background-color: var(--azul-oceano);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .solucao-text {
+    color: #61dafb; /* Azul ciano mais vibrante para texto */
+}
+
+body.dark-mode .solucao-desc {
+    color: var(--branco-gelo);
+}
+
+/* Dark Mode - Technologies Section */
+body.dark-mode #tecnologia {
+    background-color: var(--azul-marinho);
+    color: var(--branco-gelo);
+}
+
+body.dark-mode #techlist li {
+    background-color: var(--azul-oceano);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode #techlist li:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+}
+
+body.dark-mode #techlist p {
+    color: var(--branco-gelo);
+}
+
+/* Dark Mode - Objectives Section */
+body.dark-mode #objetivo {
+    background: linear-gradient(135deg, var(--azul-marinho), var(--azul-oceano));
+    color: var(--branco-gelo);
+}
+
+body.dark-mode .cards-objetivo .card {
+    background: rgba(0, 0, 0, 0.3); /* Fundo mais escuro e translúcido */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6),
+                0 0 15px rgba(0, 100, 200, 0.4); /* Sombra azul escura */
+}
+
+body.dark-mode .cards-objetivo .card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8),
+                0 0 25px rgba(0, 100, 200, 0.6);
+}
+
+body.dark-mode .cards-objetivo .card img,
+body.dark-mode .cards-objetivo .card h3,
+body.dark-mode .cards-objetivo .card p {
+    color: var(--branco-gelo);
+}
+
+/* Dark Mode - Target Audience Section */
+body.dark-mode #publico-alvo {
+    background: linear-gradient(135deg, var(--azul-marinho), var(--azul-oceano));
+    color: var(--branco-gelo);
+}
+
+body.dark-mode .cards-publico .card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6),
+                0 0 15px rgba(0, 100, 200, 0.4);
+}
+
+body.dark-mode .cards-publico .card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8),
+                0 0 25px rgba(0, 100, 200, 0.6);
+}
+
+body.dark-mode .cards-publico .card i,
+body.dark-mode .cards-publico .card h3,
+body.dark-mode .cards-publico .card p {
+    color: var(--branco-gelo);
+}
+
+/* Dark Mode - Benefits Section */
+body.dark-mode #beneficio {
+    background: linear-gradient(135deg, var(--azul-marinho), var(--azul-oceano));
+    color: var(--branco-gelo);
+}
+
+body.dark-mode .descricao-beneficio p {
+    color: var(--branco-gelo);
+}
+
+body.dark-mode .cards-beneficios .card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6),
+                0 0 15px rgba(0, 100, 200, 0.4);
+}
+
+body.dark-mode .cards-beneficios .card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8),
+                0 0 25px rgba(0, 100, 200, 0.6);
+}
+
+body.dark-mode .cards-beneficios .card i,
+body.dark-mode .cards-beneficios .card h3,
+body.dark-mode .cards-beneficios .card p {
+    color: var(--branco-gelo);
+}
+
+/* Dark Mode - Impact Section */
+body.dark-mode #impacto {
+    background: linear-gradient(135deg, var(--azul-marinho), var(--azul-oceano));
+    color: var(--branco-gelo);
+    border-top: 2px solid rgba(0, 100, 200, 0.5);
+    border-bottom: 2px solid rgba(0, 100, 200, 0.5);
+}
+
+body.dark-mode .texto-impacto {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6),
+                0 0 15px rgba(0, 100, 200, 0.4);
+}
+
+body.dark-mode .texto-impacto:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8),
+                0 0 25px rgba(0, 100, 200, 0.6);
+}
+
+body.dark-mode .texto-impacto p {
+    color: var(--branco-gelo);
+}
+
+body.dark-mode .texto-impacto strong {
+    color: #61dafb; /* Azul ciano vibrante */
+}
+
+/* Dark Mode - General H2, P, UL */
+body.dark-mode h2,
+body.dark-mode section h2 {
+    color: var(--branco-gelo);
+}
+
+body.dark-mode p,
+body.dark-mode ul,
+body.dark-mode section p,
+body.dark-mode section ul {
+    color: var(--branco-gelo);
+}
+
+/* Dark Mode - Buttons */
+body.dark-mode button {
+    background-color: var(--azul-claro);
+    color: var(--azul-marinho);
+}
+
+body.dark-mode button:hover {
+    background-color: #777777;
+    color: #fff;
+}
+
+/* Dark Mode - Footer */
+body.dark-mode footer {
+    background-color: var(--azul-oceano);
+    color: var(--branco-gelo);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .github-link {
+    color: var(--branco-gelo);
+}
+
+body.dark-mode .github-link:hover {
+    color: #61dafb; /* Azul ciano para o link do GitHub no hover */
+}

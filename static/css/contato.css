@@ -5,43 +5,105 @@
   box-sizing: border-box;
 }
 
-/* Paleta de cores */
+/* Paleta de cores - Light Mode (padrão) */
 :root {
   --azul-marinho: #072f65;
   --azul-oceano: #0c3868;
   --azul-celeste: #0a60ac;
   --azul-claro: #8dbfe5;
   --branco-gelo: #cbdef1;
+
+  /* Variáveis para o header no modo normal */
+  --header-bg: rgba(242, 241, 241, 0);
+  --header-scroll-bg: var(--azul-marinho);
+
+  /* Cores de texto e fundo gerais */
+  --body-bg: var(--azul-marinho);
+  --body-color: var(--branco-gelo);
+  --text-color-primary: #fff;
+  --text-color-secondary: var(--azul-oceano); /* Para o texto do formulário */
+
+  /* Cores específicas do formulário de contato */
+  --form-bg: var(--branco-gelo);
+  --label-color: var(--azul-marinho);
+  --input-bg: #f4f9fd;
+  --input-border: var(--azul-claro);
+  --input-focus-border: var(--azul-celeste);
+
+  /* Cores de links/botões */
+  --link-color: #fff;
+  --link-hover-bg: #fff;
+  --link-hover-color: var(--azul-marinho);
+  --button-bg: var(--azul-celeste);
+  --button-hover-bg: var(--azul-oceano);
+
+  /* Cores de sombra */
+  --shadow-color: rgba(0, 0, 0, 0.2);
 }
+
+/* Paleta de cores - Dark Mode para contato.css */
+body.dark-mode {
+  --azul-marinho: #0b0b0f;
+  --azul-oceano: #1a1a21;
+  --azul-celeste: #2c2c36;
+  --azul-claro: #4a4a58;
+  --branco-gelo: #c2c2d6;
+
+  /* Variáveis para o header no modo escuro */
+  --header-bg: rgba(0, 0, 0, 0.5);
+  --header-scroll-bg: #000;
+
+  /* Cores de texto e fundo gerais */
+  --body-bg: var(--azul-marinho);
+  --body-color: var(--branco-gelo);
+  --text-color-primary: var(--branco-gelo);
+  --text-color-secondary: var(--branco-gelo); /* Mudar a cor do texto do formulário para claro */
+
+  /* Cores específicas do formulário de contato no Dark Mode */
+  --form-bg: var(--azul-oceano); /* Fundo mais escuro para o formulário */
+  --label-color: var(--branco-gelo); /* Labels claras */
+  --input-bg: var(--azul-claro); /* Fundo do input mais escuro */
+  --input-border: var(--azul-celeste); /* Borda do input */
+  --input-focus-border: var(--branco-gelo); /* Borda do input em foco */
+
+  /* Cores de links/botões */
+  --link-color: var(--branco-gelo);
+  --link-hover-bg: var(--azul-claro);
+  --link-hover-color: #000;
+  --button-bg: var(--azul-claro);
+  --button-hover-bg: var(--azul-celeste);
+
+  /* Cores de sombra */
+  --shadow-color: rgba(0, 0, 0, 0.6);
+}
+
 
 /* Body */
 body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
-  background-color: var(--azul-marinho);
-  color: var(--branco-gelo);
-  /* Garante que o corpo ocupe a altura total da viewport e use flexbox */
+  background-color: var(--body-bg); /* Usa variável */
+  color: var(--body-color); /* Usa variável */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transição */
 }
 
-/* Header - Padronizado com index.html (z-index adaptado para o mapa) */
+/* Header - Padronizado com index.html */
 header {
-    background-color: rgba(242, 241, 241, 0);
-    padding: 20px 5%;
-    height: 100px;
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-    transition: background-color 0.3s ease-in-out;
-    z-index: 1;
-    font-size: 17px;
-    font-family: "Poppins", sans-serif;
-    
-    
-  }
+  background-color: var(--header-bg); /* Usa variável */
+  padding: 20px 5%;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+}
 
 /* Navbar - Adicionado para padronizar com index.html */
 .navbar {
@@ -51,19 +113,18 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  width: 100%; /* Garante que a navbar ocupe a largura total do header */
-}
-
-/* Logo (para mapa.html que usa h1 no logo) */
-header .logo h1 {
-  color: var(--branco-gelo);
-  font-size: 24px;
+  width: 100%;
 }
 
 /* Logo (para index.html, quiz.html, contato.html que usam img no logo) */
 #logo_img {
   height: 120px;
   filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.8));
+  transition: filter 0.3s ease;
+}
+
+body.dark-mode #logo_img {
+    filter: drop-shadow(4px 4px 6px rgba(255, 255, 255, 0.5));
 }
 
 /* Estilização do botão hamburguer - Padronizado com index.html */
@@ -72,9 +133,10 @@ header .logo h1 {
   border: none;
   font-size: 30px;
   cursor: pointer;
-  display: none; /* Escondido por padrão em telas maiores */
-  color: #fff;
-  z-index: 1001; /* Z-index ainda mais alto para o botão */
+  display: none;
+  color: var(--link-color); /* Usa variável */
+  z-index: 1001;
+  transition: color 0.3s ease;
 }
 
 /* Menu principal (desktop) - Padronizado com index.html */
@@ -82,7 +144,7 @@ header .logo h1 {
   font-weight: 700;
 }
 
-.menu ul { /* Seletor direto para ul dentro do menu */
+.menu ul {
   list-style: none;
   display: flex;
   gap: 30px;
@@ -91,18 +153,44 @@ header .logo h1 {
 }
 
 .menu ul li a {
-  color: #fff;
+  color: var(--link-color); /* Usa variável */
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
   padding: 10px 10px;
   border-radius: 8px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .menu ul li a:hover {
-  background-color: #fff;
-  color: var(--azul-marinho);
+  background-color: var(--link-hover-bg); /* Usa variável */
+  color: var(--link-hover-color); /* Usa variável */
+}
+
+/* Dark Mode Button (no contato.css também) */
+.dark-mode-button {
+    background-color: var(--button-bg);
+    color: var(--link-color);
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+body.dark-mode .dark-mode-button {
+    background-color: var(--azul-claro);
+    color: var(--azul-marinho);
+}
+
+body.dark-mode .dark-mode-button:hover {
+    background-color: var(--azul-celeste);
 }
 
 /* Configuração para telas menores (menu hambúrguer) - Padronizado com index.html */
@@ -115,7 +203,7 @@ header .logo h1 {
   }
 
   .menu {
-    background-color: black; /* Fundo preto conforme solicitado anteriormente para mapa.html */
+    background-color: var(--azul-marinho); /* Usa variável */
     display: none;
     flex-direction: column;
     position: absolute;
@@ -125,7 +213,8 @@ header .logo h1 {
     padding: 10px;
     border-radius: 8px;
     z-index: 10;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+    box-shadow: 0 8px 16px var(--shadow-color); /* Usa variável */
+    transition: background-color 0.3s ease;
   }
 
   .menu ul {
@@ -138,14 +227,14 @@ header .logo h1 {
   }
 
   .menu ul li a {
-    color: #fff;
+    color: var(--link-color); /* Usa variável */
     padding: 10px;
     display: block;
   }
 
   .menu ul li a:hover {
-    background-color: #fff;
-    color: var(--azul-marinho);
+    background-color: var(--link-hover-bg); /* Usa variável */
+    color: var(--link-hover-color); /* Usa variável */
   }
 
   .menu.active {
@@ -155,27 +244,30 @@ header .logo h1 {
 
 /* Formulário de contato */
 main {
-  padding: 200px 5% 50px 5%; /* Aumenta o padding-top para compensar o header fixo */
-  flex-grow: 1; /* Permite que o main ocupe o espaço restante */
+  padding: 200px 5% 50px 5%;
+  flex-grow: 1;
 }
 
 .contato {
-  background-color: var(--branco-gelo);
+  background-color: var(--form-bg); /* Usa variável */
   padding: 50px;
   border-radius: 12px;
   max-width: 700px;
   margin: auto;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 20px var(--shadow-color); /* Usa variável */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contato h2 {
-  color: var(--azul-marinho);
+  color: var(--label-color); /* Usa variável */
   margin-bottom: 10px;
+  transition: color 0.3s ease;
 }
 
 .contato p {
-  color: var(--azul-oceano);
+  color: var(--text-color-secondary); /* Usa variável */
   margin-bottom: 30px;
+  transition: color 0.3s ease;
 }
 
 .form-group {
@@ -185,48 +277,52 @@ main {
 label {
   display: block;
   margin-bottom: 8px;
-  color: var(--azul-marinho);
+  color: var(--label-color); /* Usa variável */
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 input, textarea {
   width: 100%;
   padding: 12px 15px;
   border-radius: 8px;
-  border: 2px solid var(--azul-claro);
-  background-color: #f4f9fd;
+  border: 2px solid var(--input-border); /* Usa variável */
+  background-color: var(--input-bg); /* Usa variável */
   font-family: "Poppins", sans-serif;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  color: var(--label-color); /* Cor do texto dentro do input */
 }
 
 input:focus, textarea:focus {
-  border-color: var(--azul-celeste);
+  border-color: var(--input-focus-border); /* Usa variável */
   outline: none;
 }
 
 button {
-  background-color: var(--azul-celeste);
-  color: white;
+  background-color: var(--button-bg); /* Usa variável */
+  color: var(--text-color-primary); /* Usa variável */
   border: none;
   padding: 12px 24px;
   cursor: pointer;
   border-radius: 6px;
   font-size: 16px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
-  background-color: var(--azul-oceano);
+  background-color: var(--button-hover-bg); /* Usa variável */
 }
 
 /* Footer */
 footer {
-  background-color: var(--azul-marinho);
-  color: var(--branco-gelo);
+  background-color: var(--azul-marinho); /* Usa variável */
+  color: var(--branco-gelo); /* Usa variável */
   text-align: center;
   padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* ... (Mantenha o restante do seu CSS que não foi alterado ou que está comentado) ... */
 /* Configuração para telas menores (menu hambúrguer) - Padronizado com index.html */
 @media screen and (max-width: 1020px) {
   .menu-toggle {
